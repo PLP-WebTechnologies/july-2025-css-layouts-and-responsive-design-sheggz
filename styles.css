@@ -1,0 +1,102 @@
+.flex-container{
+    grid-area: section-cards;
+    display:flex;
+    background-color: darkgray;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+
+}
+
+.sect1{
+    background-color: rgb(252, 116, 116);
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+.sect2{
+    background-color: cornflowerblue;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.sect3{
+    background-color: rgb(116, 252, 116);
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.body-container{
+    display:grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 2fr 2fr 2fr 1fr;
+    grid-template-areas: "header header"
+                         "main-article main-aside"
+                         "section-cards section-cards"
+                         "footer footer";
+    height: 100vh;
+    background: rgb(218, 200, 39);
+}
+
+header  {
+    grid-area: header;
+    border: 2px dashed black;
+}
+main{
+    display: contents;
+}
+
+main article{
+    grid-area: main-article;
+    border: 2px dashed black;
+}
+main aside{
+    grid-area: main-aside;
+    border: 2px dotted black;
+}
+
+footer{
+    grid-area: footer;
+    border: 2px dashed black;
+}
+
+header nav{
+    text-align: right;
+    display: block;
+    position: static;
+    padding: 30px;
+    background-color: lightslategrey;
+}
+   
+header nav ul li{
+    display: inline;
+    margin:10px;
+    
+}
+
+/* Responsive Design using media queries to change some properties provided the screen asccessing the site is 600px or less */
+@media (max-width: 600px){
+    .body-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "header"
+                             "main-article"
+                             "main-aside"
+                             "section-cards"
+                             "footer";
+        background-color: greenyellow;
+    }
+
+    header nav{
+        position: static
+    }
+}
